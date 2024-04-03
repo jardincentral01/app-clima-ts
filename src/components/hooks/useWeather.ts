@@ -59,7 +59,7 @@ export default function useWeather(): useWeatherT{
         setNotFound(false)
         const APIkey = import.meta.env.VITE_API_KEY
         try {
-            const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${form.city},${form.country}&appid=${APIkey}`
+            const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${form.city},${form.country}&appid=${APIkey}`
             const { data } = await axios(geoUrl)
 
             if(data.length == 0) return setNotFound(true)
